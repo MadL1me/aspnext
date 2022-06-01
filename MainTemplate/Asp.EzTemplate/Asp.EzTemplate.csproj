@@ -9,7 +9,9 @@
         <Description>ASPNET Ez modern template</Description>
         <PackageTags>dotnet-new;templates;aspnet;ez-template;webapp;aspnet-react;aspnet-vue</PackageTags>
         <TargetFramework>net6.0</TargetFramework>
-
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
