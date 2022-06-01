@@ -1,4 +1,4 @@
-namespace WebApplication1;
+namespace Asp.EzTemplate;
 
 public class WeatherForecast
 {

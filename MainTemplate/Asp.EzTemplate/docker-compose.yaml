@@ -1,6 +1,6 @@
 ﻿version: "3.9"
 services:
-  web:
+  Asp.EzTemplate_service:
     build: .
     ports:
       - "8000:80"
@@ -10,7 +10,7 @@ services:
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_Kestrel__Certificates__Default__Password=310131
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-    container_name: "aspnetapp_service"
+    container_name: "Asp.EzTemplate_service"
     labels:
       - "traefik.http.routers.my-container.rule=Host(`example.com`)"
     volumes:
