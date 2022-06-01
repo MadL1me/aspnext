@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    
+    <PropertyGroup>
+        <PackageType>Template</PackageType>
+        <PackageVersion>0.1.0</PackageVersion>
+        <PackageId>AspNetEzTemplates.Templates</PackageId>
+        <Title>Asp-net ez templates</Title>
+        <Authors>Ilya Klimenko (MadL1me)</Authors>
+        <Description>ASPNET Ez modern template</Description>
+        <PackageTags>dotnet-new;templates;aspnet;ez-template;webapp;aspnet-react;aspnet-vue</PackageTags>
+        <TargetFramework>net6.0</TargetFramework>
+
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include=".template.config\template.json" />
+    </ItemGroup>
+</Project>

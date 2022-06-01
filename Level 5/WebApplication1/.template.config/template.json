@@ -1,0 +1,12 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Ilya  Klimenko (MadL1me)",
+  "classifications": [ "Webapp", "Asp net 6" ],
+  "identity": "AspNetEzTemplates.Main.CSharp",
+  "name": "ASP NET ez templates main template",
+  "shortName": "ez-webapp-main",
+  "tags": {
+    "type": "solution",
+    "language": "C#"
+  }
+}
