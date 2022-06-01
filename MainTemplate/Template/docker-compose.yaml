@@ -1,6 +1,6 @@
 ﻿version: "3.9"
 services:
-  Asp.EzTemplate_service:
+  web_app:
     build: .
     ports:
       - "8000:80"
