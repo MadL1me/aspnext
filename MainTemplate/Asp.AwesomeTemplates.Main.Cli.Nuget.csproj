@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageType>Template</PackageType>
+        <PackageVersion>0.0.1</PackageVersion>
+        <PackageId>Asp.AwesomeTemplates.Main.Cli</PackageId>
+        <Title>ASP.NET 6 awesome templates</Title>
+        <Authors>Ilya Klimenko (MadL1me)</Authors>
+        <Description>ASP.NET 6 Easy-to-use, modern and awesome template</Description>
+        <PackageTags>dotnet-new;templates;aspnet;ez-template;webapp;aspnet-react;aspnet-vue</PackageTags>
+        <TargetFramework>net6.0</TargetFramework>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+    </PropertyGroup>
+    
+
+    <ItemGroup>
+      <Content Include="Template\**\*" Exclude="Template\**\bin\**;Template\**\obj\**" />
+      <Compile Remove="**\*" />
+    </ItemGroup>
+
+</Project>
