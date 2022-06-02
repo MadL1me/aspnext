@@ -5,16 +5,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["..", "Asp.EzTemplate/"]
-RUN dotnet restore "Asp.EzTemplate/Asp.EzTemplate.csproj"
+COPY ["..", "Asp.AwesomeTemplate/"]
+RUN dotnet restore "Asp.AwesomeTemplate/Asp.AwesomeTemplate.csproj"
 COPY . .
-WORKDIR "/src/Asp.EzTemplate"
-RUN dotnet build "Asp.EzTemplate.csproj" -c Release -o /app/build
+WORKDIR "/src/Asp.AwesomeTemplate"
+RUN dotnet build "Asp.AwesomeTemplate.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Asp.EzTemplate.csproj" -c Release -o /app/publish
+RUN dotnet publish "Asp.AwesomeTemplate.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Asp.EzTemplate.dll"]
+ENTRYPOINT ["dotnet", "Asp.AwesomeTemplate.dll"]

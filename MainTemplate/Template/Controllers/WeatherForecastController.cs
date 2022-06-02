@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Asp.EzTemplate.Controllers;
+namespace Asp.AwesomeTemplate.Controllers;
 
 [ApiController]
 [Route("[controller]")]
