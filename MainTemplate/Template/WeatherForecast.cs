@@ -1,4 +1,4 @@
-namespace Asp.EzTemplate;
+namespace Asp.AwesomeTemplate;
 
 public class WeatherForecast
 {
