@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "WebApplication1": {
+    "Asp.AwesomeTemplate": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
