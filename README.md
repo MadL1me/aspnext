@@ -1,33 +1,38 @@
-# aspnet-ez-templates
-ASP NET 6 Modern templates for ez development. ***Write code, not Configs.***
+# ASPNET-AWESOME-TEMPLATES
+ASP.NET 6 Awesome templates for easy development. ***Write code, not Configs.***
 
 ## Description
 
 The goals of this repo:
 
-* Create actually _**usable, but easy**_ templates with _**deploying and developing in one command**_.
+* Use actually _**powerful, but simple**_ templates to _**to start coding in one command**_.
 
-* No useless complex stuff which is not used in 99.9% of the apps, like Event-sourcing, DDD and other buzz-techs you may ecnounter. 
+* No useless complex stuff which is not used in 99.9% of the apps, like Event-sourcing, DDD, Multitenancy, and other buzz-techs you may ecnounter. It can be included, but it is not **must**.
 
-* Only most useful techs and concepts is used, like [ASP.NET 6](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0), [Docker](https://www.docker.com/), [Traefik](https://doc.traefik.io/traefik/) as Reverse-proxy, etc.
+* Only most useful techs and concepts are used: [ASP.NET 6](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0), [Docker](https://www.docker.com/), [Traefik](https://doc.traefik.io/traefik/), etc.
 
-* ***Use already configured Docker-compose, ASP.NET and Traefik. Stop doing config-fucking. Dev your app in one click***
+* ***Use already configured Docker-compose, ASP.NET and other tools. Stop doing config-fucking. Dev your app in one click***
 
 ## Where to start
 
-(Currently repo contains only my personal template (Level 5))
-You can start with Level 0 template. It contains most simple yet useful things you need for your app.
-Each _Level_ is easy runs in docker, and have its own certificates. Each folder have its own _README_ you should read. It contains info about stack, documentation and useful commands list.
+Currently repo contains only MAIN (Level X template). This is the hardest and most advanced template, all other templates made from this one. It have most of customisable features, however, it may be hard to use this template throught ```dotnet new```, so for best user experience, it's highly recommended to use _**[create-aspnet-app](https://github.com/MadL1me/create-aspnet-app)** cli tool_.
 
-## Levels
-Each "Level" adds complexity to the templates. The problem is, to be effective with a very advanced template, you need to be effective with almost each technology down there.
+Each _Level_ is easy runs in docker, have its own _README_ which contains info about project Stack, documentation and useful commands list.
 
-In _Level 0_ there is the most simple templates with world most convinient enterprise technologies - Just Docker + ASP.NET 6 for example. 
+If you don't want to use it, you can start with Level X template like this:
 
-The _Level 5_ may have a lot of libraries or stuff you may not even need - like _Authorization, Logging configs, Traefik reverse proxy, etc._ For more info you can check unique **README** in each _"Level X"_ folder.
+1. Install template:
 
-## TODO
-- [ ] Templates from level 0 to 4.
-- [ ] Docs to each template
-- [ ] Traefik support 
-- [ ] Easy deploy as production docker composes for each template
+  `dotnet new --install Asp.AwesomeTemplates.Main::0.1.0`
+
+2. Create template with dotnet new:
+
+  `dotnet new aspnet-awesome-main`
+
+3. Use your template!
+
+## Contribute
+
+You can contribute by issue proposals, and making pull reqeusts. 
+
+Your ideas about how we can make this simpler, more easy etc are very much needed.
