@@ -9,5 +9,13 @@
   "tags": {
     "type": "project",
     "language": "C#"
+  },
+  "symbols": {
+    "EnableSwaggerSupport": {
+      "type": "parameter",
+      "descriptions": "Enables swagger support",
+      "datatype": "bool",
+      "defaultValue": "true"
+    }
   }
 }
