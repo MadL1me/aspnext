@@ -17,7 +17,7 @@ ASP.NET 6 Awesome templates for easy development. ***Write code, not Configs.***
 
 * Only most useful techs and concepts are used: [ASP.NET 6](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0), [Docker](https://www.docker.com/), [Traefik](https://doc.traefik.io/traefik/), etc.
 
-* ***Use already configured Docker-compose, ASP.NET and other tools. Stop doing config-fucking. Start wrtiing code in one click***
+* ***Use already configured Docker-compose, ASP.NET and other tools. Stop doing config-fucking. Start writing code in one click***
 
 ## Where to start
 
@@ -36,7 +36,7 @@ If you don't want to use it, you can start with Level X template like this:
 2. Create template with dotnet new:
 
   ```sh
-  dotnet new aspnet-awesome-main
+  dotnet new aspnet-awesome-main -o "MyAwesomeProjectName"
   ```
 
 3. Use your template! (For example, go to Level X template [README](https://github.com/MadL1me/aspnet-awesome-templates/blob/master/Level%20X/Template/README.md), it will have all required commands with your configuration)
