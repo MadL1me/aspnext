@@ -7,17 +7,17 @@
 
 ASP.NET 6 Awesome templates for easy development. ***Write code, not Configs.***
 
-## Description
+<img alt="Logo" align="right" src="https://user-images.githubusercontent.com/46647517/172821591-cf472a75-69ea-4447-b5a9-7fac844c8f42.png" width="20%">
 
-The goals of this repo:
+## Phylosophy
 
 * Use actually _**powerful, but simple**_ templates to _**to start coding in one command**_.
 
-* No useless complex stuff which is not used in 99.9% of the apps, like Event-sourcing, DDD, Multitenancy, and other buzz-techs you may ecnounter. It can be included, but it is not **must**.
+* No useless complex stuff which is not used in 99.9% of the apps, like Event-sourcing, DDD, Multitenancy, and other buzz-words you may ecnounter. It can be included, but it is not **must**.
 
 * Only most useful techs and concepts are used: [ASP.NET 6](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0), [Docker](https://www.docker.com/), [Traefik](https://doc.traefik.io/traefik/), etc.
 
-* ***Use already configured Docker-compose, ASP.NET and other tools. Stop doing config-fucking. Dev your app in one click***
+* ***Use already configured Docker-compose, ASP.NET and other tools. Stop doing config-fucking. Start wrtiing code in one click***
 
 ## Where to start
 
