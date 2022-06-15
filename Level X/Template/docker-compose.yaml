@@ -22,5 +22,9 @@ services:
       - "3000:3000"
     container_name: react-ui
     stdin_open: true
+    tty: true
+    environment:
+      - WATCHPACK_POLLING=true
     volumes:
-      - ./react-ui/node_modules
+      - ./react-ui:/usr/src/app/react-ui
+      - /usr/src/app/react-ui/node_modules
