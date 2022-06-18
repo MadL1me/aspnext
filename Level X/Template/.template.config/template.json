@@ -23,6 +23,26 @@
       "descriptions": "Enables swagger support",
       "datatype": "bool",
       "defaultValue": "true"
+    },
+    "UseSpaFrontendFramework": {
+      "type": "parameter",
+      "descriptions": "Adds selected SPA framework (React/Vue)",
+      "datatype": "choice",
+      "defaultValue": "None",
+      "choices": [
+        {
+          "choice": "React",
+          "description": "Use React.Ts created with create-react-app and configured to be better"
+        },
+        {
+          "choice": "None",
+          "description": "Do not use any spa framework"
+        }
+      ]
+    },
+    "UseReact": {
+      "type": "computed",
+      "value": "(UseSpaFrontendFramework == \"React\""
     }
   },
   "sources": [
@@ -32,6 +52,12 @@
           "condition": "(!AddExampleController)",
           "exclude": [
             "Controllers/ExampleController.cs"
+          ]
+        },
+        {
+          "condition": "(!UseReact)",
+          "exclude": [
+            "react-ui/**"
           ]
         }
       ]
