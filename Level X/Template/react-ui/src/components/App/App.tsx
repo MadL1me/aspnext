@@ -13,11 +13,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
           target="_blank"
+          href={process.env.REACT_APP_API_URL + "/swagger"}
           rel="noopener noreferrer"
         >
-          { process.env.REACT_APP_API_URL }
+          your backend api: {process.env.REACT_APP_API_URL}/swagger
         </a>
       </header>
     </div>
