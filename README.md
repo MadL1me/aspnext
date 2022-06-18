@@ -30,13 +30,13 @@ If you don't want to use it, you can start with Level X template like this:
 1. Install template:
 
   ```sh
-  dotnet new --install Asp.AwesomeTemplates.Main::0.0.2
+  dotnet new --install Asp.AwesomeTemplates.Main::0.2.0
   ```
 
 2. Create template with dotnet new:
 
   ```sh
-  dotnet new aspnet-awesome-main -o "MyAwesomeProjectName"
+  dotnet new aspnet-awesome-main -o "MyAwesomeProjectName" -U React
   ```
 
 3. Use your template! (For example, go to Level X template [README](https://github.com/MadL1me/aspnet-awesome-templates/blob/master/Level%20X/Template/README.md), it will have all required commands with your configuration)
