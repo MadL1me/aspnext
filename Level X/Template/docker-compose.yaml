@@ -15,6 +15,7 @@ services:
     volumes:
       # Development certificate volume
       - ~/.aspnet/https:/https:ro
+//#if(UseReact)
   react-ui:
     build:
       context: ./react-ui
@@ -28,3 +29,4 @@ services:
     volumes:
       - ./react-ui:/usr/src/app/react-ui
       - /usr/src/app/react-ui/node_modules
+//#endif
