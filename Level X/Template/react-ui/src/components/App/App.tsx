@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../resources/logo.svg'
+import logo from '../../resources/TupTup.png'
 import './App.css';
 
 function App() {
