@@ -25,13 +25,15 @@ Congrats, you setuped your dev certificates
 
 ### Run
 
-Now, you can simply run your app with one command:
+Now, you can simply run your app with one command in interactive mode:
 
 ```sh
-docker compose up -d
+docker compose up 
 ```
+<!--#if(EnableSwaggerSupport) -->
+Back-end Swagger docs: https://localhost:443/swagger
+<!--#endif -->
 
-Swagger route:
-```
-http://localhost:433/swagger
-```
+<!--#if(UseReact) -->
+Front-end React-app: http://localhost:3000
+<!--#endif -->
