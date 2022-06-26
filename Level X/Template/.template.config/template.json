@@ -40,9 +40,29 @@
         }
       ]
     },
+    "UseEfDatabase": {
+      "type": "parameter",
+      "description": "Adds Database with Entity Framework and Docker-compose",
+      "datatype": "choice",
+      "defaultValue": "pgsql",
+      "choices": [
+        {
+          "choice": "pgsql",
+          "description": "Use PostgreSQL database inside docker compose with pgAdmin"
+        },
+        {
+          "choice": "none",
+          "description": "Do not use any database provider"
+        }
+      ]
+    },
+    "UsePostgreSql": {
+      "type": "computed",
+      "value": "(UseEfDatabase == \"pgsql\")"
+    },
     "UseReact": {
       "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"React\""
+      "value": "(UseSpaFrontendFramework == \"React\")"
     }
   },
   "sources": [
@@ -58,6 +78,12 @@
           "condition": "(!UseReact)",
           "exclude": [
             "react-ui/**"
+          ]
+        },
+        {
+          "condition": "(!UsePostgreSql)",
+          "exclude": [
+            "Data/Asp.AwesomeTemplateDbContext.cs"
           ]
         }
       ]

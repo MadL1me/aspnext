@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS build
 WORKDIR /src
 COPY ["Asp.AwesomeTemplate.csproj", "Asp.AwesomeTemplate/"]
 RUN dotnet restore "Asp.AwesomeTemplate/Asp.AwesomeTemplate.csproj"
-COPY . .
+COPY . ./Asp.AwesomeTemplate
 WORKDIR "/src/Asp.AwesomeTemplate"
 RUN dotnet build "Asp.AwesomeTemplate.csproj" -c Release -o /app/build
 

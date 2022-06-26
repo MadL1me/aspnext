@@ -1,4 +1,11 @@
+using System.Text;
+#if(EnableSwaggerSupport)
 using Microsoft.OpenApi.Models;
+#endif
+#if (UsePostgreSql)
+using Microsoft.EntityFrameworkCore;
+using Asp.AwesomeTemplate.Data;
+#endif
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +14,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 #if(EnableSwaggerSupport)
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
@@ -15,7 +21,11 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.AwesomeTemplate API", Version = "v1" });
 });
+#endif
 
+#if (UsePostgreSql)
+builder.Services.AddDbContext<Asp.AwesomeTemplateDbContext>(
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  
 #endif
 
 var app = builder.Build();
