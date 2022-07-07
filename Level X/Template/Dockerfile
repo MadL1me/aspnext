@@ -1,13 +1,13 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim AS build
 WORKDIR /src
-COPY ["..", "Asp.AwesomeTemplate/"]
+COPY ["Asp.AwesomeTemplate.csproj", "Asp.AwesomeTemplate/"]
 RUN dotnet restore "Asp.AwesomeTemplate/Asp.AwesomeTemplate.csproj"
-COPY . .
+COPY . ./Asp.AwesomeTemplate
 WORKDIR "/src/Asp.AwesomeTemplate"
 RUN dotnet build "Asp.AwesomeTemplate.csproj" -c Release -o /app/build
 
