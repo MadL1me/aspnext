@@ -1,8 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿#if (identity)
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+#endif
+using Microsoft.EntityFrameworkCore;
 
 namespace AspAwesomeTemplate.Data;
 
+#if (identity)
+public sealed class AspAwesomeTemplateDbContext : IdentityDbContext<User>
+#else
 public sealed class AspAwesomeTemplateDbContext : DbContext
+#endif
 {
     public AspAwesomeTemplateDbContext(DbContextOptions options) : base(options)
     {

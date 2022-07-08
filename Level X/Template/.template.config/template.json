@@ -88,6 +88,10 @@
     "UseJwtAuth": {
       "type": "computed",
       "value": "(auth == \"jwt\")"
+    },
+    "UseAnyAuth": {
+      "type": "computed",
+      "value": "(auth != \"none\")"
     }
   },
   "sources": [
@@ -109,6 +113,12 @@
           "condition": "(!UsePostgreSql)",
           "exclude": [
             "Data/AspAwesomeTemplateDbContext.cs"
+          ]
+        },
+        {
+          "condition": "(!UseAnyAuth)",
+          "exclude": [
+            "Controllers/AuthController.cs"
           ]
         }
       ]
