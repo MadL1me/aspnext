@@ -5,42 +5,41 @@
   "identity": "Asp.AwesomeTemplates.Main.CSharp",
   "name": "ASP.NET 6 Easy-to-use, modern and awesome template",
   "shortName": "asp-awesome-main",
-  "sourceName": "Asp.AwesomeTemplate",
+  "sourceName": "AspAwesomeTemplate",
   "tags": {
     "type": "project",
     "language": "C#"
   },
   "symbols": {
-    "AddExampleController": {
+    "example": {
       "type": "parameter",
-      "displayName": "example",
       "descriptions": "Adds ExampleController with code-samples for libs and stuff with ASP.NET 6",
       "datatype": "bool",
       "defaultValue": "true"
     },
-    "EnableSwaggerSupport": {
+    "swagger": {
       "type": "parameter",
       "descriptions": "Enables swagger support",
       "datatype": "bool",
       "defaultValue": "true"
     },
-    "UseSpaFrontendFramework": {
+    "frontend": {
       "type": "parameter",
       "descriptions": "Adds selected SPA framework (React/Vue)",
       "datatype": "choice",
-      "defaultValue": "None",
+      "defaultValue": "none",
       "choices": [
         {
-          "choice": "React",
+          "choice": "react",
           "description": "Use React.Ts created with create-react-app and configured to be better"
         },
         {
-          "choice": "None",
+          "choice": "none",
           "description": "Do not use any spa framework"
         }
       ]
     },
-    "UseEfDatabase": {
+    "db": {
       "type": "parameter",
       "description": "Adds Database with Entity Framework and Docker-compose",
       "datatype": "choice",
@@ -56,20 +55,42 @@
         }
       ]
     },
+    "identity": {
+      "type": "parameter",
+      "description": "Adds ASP.NET Core Identity",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "auth": {
+      "type": "parameter",
+      "description": "Adds selected authentication method for asp.net app",
+      "datatype": "choice",
+      "defaultValue": "jwt",
+      "choices": [
+        {
+          "choice": "none",
+          "description": "Do not use any authentication method"
+        },
+        {
+          "choice": "jwt",
+          "description": "Adds JWT authentication method"
+        }
+      ]
+    },
     "UsePostgreSql": {
       "type": "computed",
-      "value": "(UseEfDatabase == \"pgsql\")"
+      "value": "(db == \"pgsql\")"
     },
     "UseReact": {
       "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"React\")"
+      "value": "(frontend == \"react\")"
     }
   },
   "sources": [
     {
       "modifiers": [
         {
-          "condition": "(!AddExampleController)",
+          "condition": "(!example)",
           "exclude": [
             "Controllers/ExampleController.cs"
           ]
@@ -83,7 +104,7 @@
         {
           "condition": "(!UsePostgreSql)",
           "exclude": [
-            "Data/Asp.AwesomeTemplateDbContext.cs"
+            "Data/AspAwesomeTemplateDbContext.cs"
           ]
         }
       ]

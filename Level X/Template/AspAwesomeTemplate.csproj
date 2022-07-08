@@ -7,7 +7,7 @@
       <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
-<!--#if (EnableSwaggerSupport)-->
+<!--#if (swagger)-->
     <ItemGroup>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>

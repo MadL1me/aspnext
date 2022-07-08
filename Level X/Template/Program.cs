@@ -1,10 +1,10 @@
 using System.Text;
-#if(EnableSwaggerSupport)
+#if(swagger)
 using Microsoft.OpenApi.Models;
 #endif
 #if (UsePostgreSql)
 using Microsoft.EntityFrameworkCore;
-using Asp.AwesomeTemplate.Data;
+using AspAwesomeTemplate.Data;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-#if(EnableSwaggerSupport)
+#if(swagger)
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
@@ -24,7 +24,7 @@ builder.Services.AddSwaggerGen(c =>
 #endif
 
 #if (UsePostgreSql)
-builder.Services.AddDbContext<Asp.AwesomeTemplateDbContext>(
+builder.Services.AddDbContext<AspAwesomeTemplateDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  
 #endif
 
@@ -33,7 +33,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-#if(EnableSwaggerSupport)
+#if(swagger)
     app.UseSwagger();
     app.UseSwaggerUI();
 #endif

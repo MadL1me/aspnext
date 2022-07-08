@@ -5,13 +5,13 @@ services:
     ports:
       - "8000:80"
       - "443:443"
-    container_name: "Asp.AwesomeTemplate"
+    container_name: backend
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
         # Development certificate for TLS
       - ASPNETCORE_Kestrel__Certificates__Default__Password=PASSWORD
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/Asp.AwesomeTemplate.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/AspAwesomeTemplate.pfx
     volumes:
       # Development certificate volume
       - ~/.aspnet/https:/https:ro

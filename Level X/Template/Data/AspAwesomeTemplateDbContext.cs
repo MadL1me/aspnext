@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Asp.AwesomeTemplate.Data;
+namespace AspAwesomeTemplate.Data;
 
-public sealed class Asp.AwesomeTemplateDbContext : DbContext
+public sealed class AspAwesomeTemplateDbContext : DbContext
 {
-    public Asp.AwesomeTemplateDbContext(DbContextOptions options) : base(options)
+    public AspAwesomeTemplateDbContext(DbContextOptions options) : base(options)
     {
         
     }

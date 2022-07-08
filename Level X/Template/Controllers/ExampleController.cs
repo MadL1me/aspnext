@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Asp.AwesomeTemplate.Controllers;
+namespace AspAwesomeTemplate.Controllers;
 
 public record ExampleUserDto
 {
