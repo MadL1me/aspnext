@@ -16,9 +16,9 @@
         <ContentTargetFolders>content</ContentTargetFolders>
         <PackageOutputPath>./nupkg</PackageOutputPath>
     </PropertyGroup>
-    
 
     <ItemGroup>
+      <Content Include="Template\.dockerignore" />
       <Content Include="Template\**\*" Exclude="Template\**\bin\**;Template\**\obj\**" />
       <Compile Remove="**\*" />
     </ItemGroup>
