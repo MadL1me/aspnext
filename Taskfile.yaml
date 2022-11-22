@@ -1,0 +1,57 @@
+version: "3"
+
+env:
+  TEMPL_DIR: Level X
+
+dotenv: [".env"]
+
+tasks:
+  remove:
+    dir: '{{.TEMPL_DIR}}\nupkg\'
+    cmds:
+      - pwd
+      - dotnet new --uninstall $TEMPL_NAME
+      - rm -rf *
+    ignore_error: true
+
+  create:
+    dir: "{{.TEMPL_DIR}}"
+    cmds:
+      - dotnet pack
+    ignore_error: true
+
+  install:
+    dir: '{{.TEMPL_DIR}}\nupkg\'
+    cmds:
+      - dotnet new --install $TEMPL_NAME_VER
+    silent: false
+
+  new:
+    dir: '{{.TEMPL_DIR}}\nupkg\'
+    cmds:
+      - dotnet new $TEMPL_DOTNET_NAME -o $TEST_PROJ_NAME
+
+  run-dotnet:
+    dir: '{{.TEMPL_DIR}}\nupkg\{{.TEST_PROJ_NAME}}'
+    cmds:
+      - dotnet run
+
+  run:
+    dir: '{{.TEMPL_DIR}}\nupkg\{{.TEST_PROJ_NAME}}'
+    cmds:
+      - docker compose up
+
+  all:
+    cmds:
+      - task: remove
+      - task: create
+      - task: install
+      - task: new
+
+  list:
+    cmds:
+      - dotnet new -l
+
+  deploy:
+    cmds:
+      - echo "Hello from $NUGET_APIKEY"
