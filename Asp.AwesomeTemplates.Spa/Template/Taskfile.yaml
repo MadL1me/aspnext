@@ -1,0 +1,52 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  init:
+    desc: Initialize the project
+    deps: [init/frontend, init/backend, init/certs]
+
+  init/frontend:
+    desc: Initialize the front-end project
+    //#if(UseReactVite)
+    dir: react-vite
+    //#endif
+    //#if(UseNext)
+    dir: react-next
+    //#endif
+    cmds:
+      - yarn install
+
+  init/backend:
+    desc: Initialize the back-end project
+    dir: _AWESOME_SPA_
+    cmds:
+      - docker compose build
+
+  init/certs:
+    desc: Generate self-signed certificates
+    cmds:
+      - dotnet dev-certs https -ep ${HOME}/.aspnet/https/_AWESOME_SPA_.pfx -p PASSWORD
+      - dotnet dev-certs https --trust
+      # - openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/CN=localhost"
+
+  run/backend:
+    desc: Run the backend
+    dir: _AWESOME_SPA_
+    cmds:
+      - docker compose up
+
+  run/frontend:
+    desc: Run the frontend
+    //#if(UseReactVite)
+    dir: react-vite
+    //#endif
+    //#if(UseNext)
+    dir: react-next
+    //#endif
+    cmds:
+      - yarn dev
+
+  run:
+    deps: [run/backend, run/frontend]

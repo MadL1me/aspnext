@@ -2,9 +2,9 @@
 
 namespace _AWESOME_SPA_.Data;
 
-public sealed class Asp.AwesomeTemplateDbContext : DbContext
+public sealed class _AWESOME_SPA_DbContext : DbContext
 {
-    public Asp.AwesomeTemplateDbContext(DbContextOptions options) : base(options)
+    public _AWESOME_SPA_DbContext(DbContextOptions options) : base(options)
     {
         
     }
