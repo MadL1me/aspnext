@@ -14,24 +14,6 @@ services:
     volumes:
       # Development certificate volume
       - ~/.aspnet/https:/https:ro
-//#if(UseReact)
-  react-ui:
-    build:
-      context: ../react-ui
-    ports:
-      - "3000:3000"
-    stdin_open: true
-    tty: true
-    environment:
-      - WATCHPACK_POLLING=true
-    volumes:
-      - ./react-ui:/usr/src/app/react-ui
-      - /usr/src/app/react-ui/node_modules
-    //#if(UsePostgreSql)
-    networks:
-      - postgres
-    //#endif
-//#endif
 //#if(UsePostgreSql)
   postgres:
     image: postgres

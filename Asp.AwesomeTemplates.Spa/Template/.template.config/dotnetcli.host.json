@@ -13,7 +13,7 @@
       "longName": "frontend",
       "shortName": "f"
     },
-    "AddExampleController": {
+    "UseExamples": {
       "longName": "with-examples",
       "shortName": "e"
     }
