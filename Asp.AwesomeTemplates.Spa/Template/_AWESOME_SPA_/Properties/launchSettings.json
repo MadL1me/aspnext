@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Asp.AwesomeTemplate": {
+    "_AWESOME_SPA_": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
