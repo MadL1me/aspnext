@@ -26,9 +26,10 @@ Congrats, you setuped your dev certificates
 
 ### Run
 
-Now, you can simply run your app with one command in interactive mode:
+Now, you can simply run your app commands in interactive mode:
 
 ```sh
+cd _AWESOME_SPA_
 docker compose up
 ```
 
@@ -41,5 +42,11 @@ Back-end Swagger docs: https://localhost:443/swagger
 <!--#if(UseReactVite) -->
 
 Front-end React-app: http://127.0.0.1:5173/
+
+<!--#endif -->
+
+<!--#if(UseNext) -->
+
+Front-end React-app: http://localhost:3000/
 
 <!--#endif -->
