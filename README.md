@@ -21,7 +21,9 @@ ASP.NET 6 Awesome templates for easy development. ***Write code, not Configs.***
 
 ## Where to start
 
-Currently repo contains only MAIN (Level X template). This is the hardest and most advanced template, all other templates made from this one. It have most of customisable features, however, it may be hard to use this template throught `dotnet new`, so for best user experience, it's highly recommended to use _**[create-aspnet-app](https://github.com/MadL1me/create-aspnet-app)** cli tool_.
+Currently, main repository contains `Asp.AwesomeTemplates.Spa` template - template with React, ASP.NET Core, and many other things.
+
+For best user experience, it's highly recommended to use _**[create-aspnet-app](https://github.com/MadL1me/create-aspnet-app)** cli tool_.
 
 Each _Level_ is easy runs in docker, have its own _README_ which contains info about project Stack, documentation and useful commands list.
 
@@ -30,16 +32,16 @@ If you don't want to use it, you can start with Level X template like this:
 1. Install template:
 
   ```sh
-  dotnet new --install Asp.AwesomeTemplates.Main::0.2.0
+  dotnet new --install Asp.AwesomeTemplates.Spa::0.2.2
   ```
 
 2. Create template with dotnet new:
 
   ```sh
-  dotnet new aspnet-awesome-main -o "MyAwesomeProjectName" -U React
+  dotnet new asp-awesome-spa -o "MyAwesomeProject"
   ```
 
-3. Use your template! (For example, go to Level X template [README](https://github.com/MadL1me/aspnet-awesome-templates/blob/master/Level%20X/Template/README.md), it will have all required commands with your configuration)
+3. Use your template! (For example, go to Asp.AwesomeTemplates.Spa template [README](https://github.com/MadL1me/aspnet-awesome-templates/blob/master/ Asp.AwesomeTemplates.Spa/Template/README.md), it will have all required commands with your configuration)
 
 ## Contribute
 
