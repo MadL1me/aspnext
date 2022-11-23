@@ -1,6 +1,6 @@
 
 [![Dotnet foundation](https://img.shields.io/badge/-.NET%20Foundation-blueviolet)](https://dotnetfoundation.org/)
-![Version](https://img.shields.io/badge/version-0.0.2-orange)
+![Version](https://img.shields.io/badge/version-0.2.2-orange)
 [![Nuget package](https://img.shields.io/badge/Nuget%20-Package-red)](https://www.nuget.org/packages/Asp.AwesomeTemplates.Main/) 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)
 # ASPNET-AWESOME-TEMPLATES 
