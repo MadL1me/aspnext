@@ -20,18 +20,19 @@
     },
     "EnableSwaggerSupport": {
       "type": "parameter",
+      "displayName": "swagger",
       "descriptions": "Enables swagger support",
       "datatype": "bool",
       "defaultValue": "true"
     },
     "UseSpaFrontendFramework": {
       "type": "parameter",
-      "descriptions": "Adds selected SPA framework (React/Vue)",
+      "descriptions": "Adds selected SPA framework (React)",
       "datatype": "choice",
-      "defaultValue": "None",
+      "defaultValue": "ReactCra",
       "choices": [
         {
-          "choice": "React",
+          "choice": "ReactCra",
           "description": "Use React.Ts created with create-react-app and configured to be better"
         },
         {
@@ -62,7 +63,7 @@
     },
     "UseReact": {
       "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"React\")"
+      "value": "(UseSpaFrontendFramework == \"ReactCra\")"
     }
   },
   "sources": [

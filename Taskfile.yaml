@@ -3,7 +3,7 @@ version: "3"
 env:
   TEMPL_DIR: Asp.AwesomeTemplates.Spa
 
-dotenv: [".env"]
+dotenv: [".env.prod"]
 
 tasks:
   remove:
@@ -23,7 +23,7 @@ tasks:
   install:
     dir: '{{.TEMPL_DIR}}\nupkg\'
     cmds:
-      - dotnet new --install $TEMPL_NAME_VER
+      - dotnet new --install $NUGET_FILE
     silent: false
 
   new:
@@ -52,6 +52,11 @@ tasks:
     cmds:
       - dotnet new -l
 
-  deploy:
+  info:
     cmds:
-      - echo "Hello from $NUGET_APIKEY"
+      - dotnet new $TEMPL_DOTNET_NAME -h
+
+  deploy:
+    dir: '{{.TEMPL_DIR}}\nupkg'
+    cmds:
+      - dotnet nuget push $NUGET_FILE --api-key $NUGET_APIKEY --source https://api.nuget.org/v3/index.json
