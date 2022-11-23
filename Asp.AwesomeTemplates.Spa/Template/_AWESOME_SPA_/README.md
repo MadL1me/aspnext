@@ -38,8 +38,8 @@ Back-end Swagger docs: https://localhost:443/swagger
 
 <!--#endif -->
 
-<!--#if(UseReact) -->
+<!--#if(UseReactVite) -->
 
-Front-end React-app: http://localhost:3000
+Front-end React-app: http://127.0.0.1:5173/
 
 <!--#endif -->

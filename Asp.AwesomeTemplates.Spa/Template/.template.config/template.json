@@ -29,10 +29,10 @@
       "type": "parameter",
       "descriptions": "Adds selected SPA framework (React)",
       "datatype": "choice",
-      "defaultValue": "ReactCra",
+      "defaultValue": "ReactVite",
       "choices": [
         {
-          "choice": "ReactCra",
+          "choice": "ReactVite",
           "description": "Use React.Ts created with create-react-app and configured to be better"
         },
         {
@@ -61,21 +61,21 @@
       "type": "computed",
       "value": "(UseEfDatabase == \"pgsql\")"
     },
-    "UseReact": {
+    "UseReactVite": {
       "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"ReactCra\")"
+      "value": "(UseSpaFrontendFramework == \"ReactVite\")"
     }
   },
   "sources": [
     {
       "modifiers": [
         {
-          "condition": "(!AddExampleController)",
-          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
+          "condition": "(!UseReactVite)",
+          "exclude": ["react-vite/**"]
         },
         {
-          "condition": "(!UseReact)",
-          "exclude": ["react-ui/**"]
+          "condition": "(!AddExampleController)",
+          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
         },
         {
           "condition": "(!UsePostgreSql)",
