@@ -1,7 +1,7 @@
 version: "3"
 
 env:
-  TEMPL_DIR: Level X
+  TEMPL_DIR: Asp.AwesomeTemplates.Spa
 
 dotenv: [".env"]
 
@@ -37,7 +37,7 @@ tasks:
       - dotnet run
 
   run:
-    dir: '{{.TEMPL_DIR}}\nupkg\{{.TEST_PROJ_NAME}}'
+    dir: '{{.TEMPL_DIR}}\nupkg\{{.TEST_PROJ_NAME}}\{{.TEST_PROJ_NAME}}'
     cmds:
       - docker compose up
 

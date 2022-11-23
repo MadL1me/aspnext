@@ -3,10 +3,10 @@
     <PropertyGroup>
         <PackageType>Template</PackageType>
         <PackageVersion>0.2.2</PackageVersion>
-        <PackageId>Asp.AwesomeTemplates.Main</PackageId>
-        <Title>ASP.NET 6 awesome templates</Title>
+        <PackageId>Asp.AwesomeTemplates.Spa</PackageId>
+        <Title>ASP.NET 6 awesome SPA template</Title>
         <Authors>Ilya Klimenko (MadL1me)</Authors>
-        <Description>ASP.NET 6 Easy-to-use, modern and awesome template</Description>
+        <Description>ASP.NET 6 Easy-to-use, modern and awesome template. Use </Description>
         <PackageTags>dotnet-new;templates;aspnet;ez-template;webapp;aspnet-react;aspnet-vue</PackageTags>
         <TargetFramework>net6.0</TargetFramework>
         <IsPackable>true</IsPackable>

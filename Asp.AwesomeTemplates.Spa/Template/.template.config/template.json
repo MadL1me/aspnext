@@ -1,11 +1,11 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
   "author": "Ilya  Klimenko (MadL1me)",
-  "classifications": [ "Webapp", "Asp net 6" ],
-  "identity": "Asp.AwesomeTemplates.Main.CSharp",
+  "classifications": ["Webapp", "Asp net 6"],
+  "identity": "Asp.AwesomeTemplates.Spa.CSharp",
   "name": "ASP.NET 6 Easy-to-use, modern and awesome template",
-  "shortName": "asp-awesome-main",
-  "sourceName": "Asp.AwesomeTemplate",
+  "shortName": "asp-awesome-spa",
+  "sourceName": "_AWESOME_SPA_",
   "tags": {
     "type": "project",
     "language": "C#"
@@ -70,21 +70,15 @@
       "modifiers": [
         {
           "condition": "(!AddExampleController)",
-          "exclude": [
-            "Controllers/ExampleController.cs"
-          ]
+          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
         },
         {
           "condition": "(!UseReact)",
-          "exclude": [
-            "react-ui/**"
-          ]
+          "exclude": ["react-ui/**"]
         },
         {
           "condition": "(!UsePostgreSql)",
-          "exclude": [
-            "Data/Asp.AwesomeTemplateDbContext.cs"
-          ]
+          "exclude": ["_AWESOME_SPA_/Data/Asp.AwesomeTemplateDbContext.cs"]
         }
       ]
     }
