@@ -8,3 +8,4 @@ Level X/.vs
 Level X/nupkg
 .env.prod
 Asp.AwesomeTemplates.Spa/nupkg
+Asp.AwesomeTemplates.Spa/Template/react-vite/node_modules

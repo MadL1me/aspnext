@@ -11,16 +11,14 @@
     "language": "C#"
   },
   "symbols": {
-    "AddExampleController": {
+    "UseExamples": {
       "type": "parameter",
-      "displayName": "example",
-      "descriptions": "Adds ExampleController with code-samples for libs and stuff with ASP.NET 6",
+      "descriptions": "Adds examples and code-samples for both frontend and backend",
       "datatype": "bool",
       "defaultValue": "true"
     },
     "EnableSwaggerSupport": {
       "type": "parameter",
-      "displayName": "swagger",
       "descriptions": "Enables swagger support",
       "datatype": "bool",
       "defaultValue": "true"
@@ -29,11 +27,15 @@
       "type": "parameter",
       "descriptions": "Adds selected SPA framework (React)",
       "datatype": "choice",
-      "defaultValue": "ReactCra",
+      "defaultValue": "Next",
       "choices": [
         {
-          "choice": "ReactCra",
-          "description": "Use React.Ts created with create-react-app and configured to be better"
+          "choice": "ReactVite",
+          "description": "Use React.Ts created with vite"
+        },
+        {
+          "choice": "Next",
+          "description": "Use Next.js with Typescript and eslint support"
         },
         {
           "choice": "None",
@@ -61,21 +63,29 @@
       "type": "computed",
       "value": "(UseEfDatabase == \"pgsql\")"
     },
-    "UseReact": {
+    "UseReactVite": {
       "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"ReactCra\")"
+      "value": "(UseSpaFrontendFramework == \"ReactVite\")"
+    },
+    "UseNext": {
+      "type": "computed",
+      "value": "(UseSpaFrontendFramework == \"Next\")"
     }
   },
   "sources": [
     {
       "modifiers": [
         {
-          "condition": "(!AddExampleController)",
-          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
+          "condition": "(!UseReactVite)",
+          "exclude": ["react-vite/**"]
         },
         {
-          "condition": "(!UseReact)",
-          "exclude": ["react-ui/**"]
+          "condition": "(!UseNext)",
+          "exclude": ["react-next/**"]
+        },
+        {
+          "condition": "(!UseExamples)",
+          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
         },
         {
           "condition": "(!UsePostgreSql)",
