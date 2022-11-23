@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Asp.AwesomeTemplate.Data;
+namespace _AWESOME_SPA_.Data;
 
 public sealed class Asp.AwesomeTemplateDbContext : DbContext
 {

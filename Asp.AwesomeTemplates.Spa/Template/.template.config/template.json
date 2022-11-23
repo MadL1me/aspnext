@@ -1,11 +1,11 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
   "author": "Ilya  Klimenko (MadL1me)",
-  "classifications": [ "Webapp", "Asp net 6" ],
-  "identity": "Asp.AwesomeTemplates.Main.CSharp",
+  "classifications": ["Webapp", "Asp net 6"],
+  "identity": "Asp.AwesomeTemplates.Spa.CSharp",
   "name": "ASP.NET 6 Easy-to-use, modern and awesome template",
-  "shortName": "asp-awesome-main",
-  "sourceName": "Asp.AwesomeTemplate",
+  "shortName": "asp-awesome-spa",
+  "sourceName": "_AWESOME_SPA_",
   "tags": {
     "type": "project",
     "language": "C#"
@@ -20,18 +20,19 @@
     },
     "EnableSwaggerSupport": {
       "type": "parameter",
+      "displayName": "swagger",
       "descriptions": "Enables swagger support",
       "datatype": "bool",
       "defaultValue": "true"
     },
     "UseSpaFrontendFramework": {
       "type": "parameter",
-      "descriptions": "Adds selected SPA framework (React/Vue)",
+      "descriptions": "Adds selected SPA framework (React)",
       "datatype": "choice",
-      "defaultValue": "None",
+      "defaultValue": "ReactCra",
       "choices": [
         {
-          "choice": "React",
+          "choice": "ReactCra",
           "description": "Use React.Ts created with create-react-app and configured to be better"
         },
         {
@@ -62,7 +63,7 @@
     },
     "UseReact": {
       "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"React\")"
+      "value": "(UseSpaFrontendFramework == \"ReactCra\")"
     }
   },
   "sources": [
@@ -70,21 +71,15 @@
       "modifiers": [
         {
           "condition": "(!AddExampleController)",
-          "exclude": [
-            "Controllers/ExampleController.cs"
-          ]
+          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
         },
         {
           "condition": "(!UseReact)",
-          "exclude": [
-            "react-ui/**"
-          ]
+          "exclude": ["react-ui/**"]
         },
         {
           "condition": "(!UsePostgreSql)",
-          "exclude": [
-            "Data/Asp.AwesomeTemplateDbContext.cs"
-          ]
+          "exclude": ["_AWESOME_SPA_/Data/Asp.AwesomeTemplateDbContext.cs"]
         }
       ]
     }

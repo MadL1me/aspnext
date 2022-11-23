@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 #endif
 #if (UsePostgreSql)
 using Microsoft.EntityFrameworkCore;
-using Asp.AwesomeTemplate.Data;
+using _AWESOME_SPA_.Data;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asp.AwesomeTemplate API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "_AWESOME_SPA_ API", Version = "v1" });
 });
 #endif
 

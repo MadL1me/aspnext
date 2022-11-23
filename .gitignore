@@ -6,3 +6,5 @@ MainTemplate/.vs
 MainTemplate/nupkg
 Level X/.vs
 Level X/nupkg
+.env.prod
+Asp.AwesomeTemplates.Spa/nupkg

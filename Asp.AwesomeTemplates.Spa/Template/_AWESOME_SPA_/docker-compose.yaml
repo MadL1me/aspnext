@@ -5,23 +5,21 @@ services:
     ports:
       - "8000:80"
       - "443:443"
-    container_name: "Asp.AwesomeTemplate"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
         # Development certificate for TLS
       - ASPNETCORE_Kestrel__Certificates__Default__Password=PASSWORD
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/Asp.AwesomeTemplate.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/_AWESOME_SPA_.pfx
     volumes:
       # Development certificate volume
       - ~/.aspnet/https:/https:ro
 //#if(UseReact)
   react-ui:
     build:
-      context: ./react-ui
+      context: ../react-ui
     ports:
       - "3000:3000"
-    container_name: react-ui
     stdin_open: true
     tty: true
     environment:
@@ -36,7 +34,6 @@ services:
 //#endif
 //#if(UsePostgreSql)
   postgres:
-    container_name: postgres_container
     image: postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
@@ -51,7 +48,6 @@ services:
     restart: unless-stopped
     
   pgadmin:
-    container_name: pgadmin_container
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
@@ -59,7 +55,6 @@ services:
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
       - pgadmin:/var/lib/pgadmin
-    
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
