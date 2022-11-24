@@ -67,4 +67,7 @@ tasks:
       - yarn dev
 
   run:
-    deps: [run/backend, run/frontend]
+    desc: Run the project
+    cmds:
+      - task: run/backend
+      - task: run/frontend
