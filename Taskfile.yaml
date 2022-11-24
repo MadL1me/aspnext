@@ -23,7 +23,7 @@ tasks:
   create/release:
     dir: "{{.TEMPL_DIR}}"
     cmds:
-      - dotnet pack
+      - dotnet pack --configuration Release
     ignore_error: true
 
   install:
