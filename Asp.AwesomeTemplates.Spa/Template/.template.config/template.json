@@ -89,7 +89,10 @@
         },
         {
           "condition": "(!UsePostgreSql)",
-          "exclude": ["_AWESOME_SPA_/Data/Asp.AwesomeTemplateDbContext.cs"]
+          "exclude": [
+            "_AWESOME_SPA_/Data/Asp.AwesomeTemplateDbContext.cs",
+            "_AWESOME_SPA_/DB/**"
+          ]
         }
       ]
     }

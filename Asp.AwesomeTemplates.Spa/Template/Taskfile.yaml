@@ -5,7 +5,7 @@ version: "3"
 tasks:
   init:
     desc: Initialize the project
-    deps: [init/frontend, init/backend, init/certs]
+    deps: [init/frontend, init/backend, init/certs, init/db]
 
   init/frontend:
     desc: Initialize the front-end project
@@ -22,6 +22,13 @@ tasks:
     desc: Initialize the back-end project
     dir: _AWESOME_SPA_
     cmds:
+      - dotnet restore
+      - docker compose build
+
+  init/db:
+    desc: Initialize the database
+    dir: _AWESOME_SPA_/DB
+    cmds:
       - docker compose build
 
   init/certs:
@@ -35,7 +42,18 @@ tasks:
     desc: Run the backend
     dir: _AWESOME_SPA_
     cmds:
-      - docker compose up
+      //#if(UsePostgreSql)
+      - task: run/db
+      //#endif
+      - docker compose up --build
+
+  //#if(UsePostgreSql)
+  run/db: 
+    desc: Rund the database
+    dir: _AWESOME_SPA_/DB
+    cmds:
+      - docker compose up --no-recreate -d
+  //#endif
 
   run/frontend:
     desc: Run the frontend
