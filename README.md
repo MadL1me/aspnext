@@ -32,7 +32,7 @@ If you don't want to use it, you can start with Level X template like this:
 1. Install template:
 
 ```sh
-dotnet new --install Asp.AwesomeTemplates.Spa::0.3.1
+dotnet new --install Asp.AwesomeTemplates.Spa::0.3.2
 ```
 
 2. Create template with dotnet new:
