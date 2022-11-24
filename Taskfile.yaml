@@ -20,6 +20,12 @@ tasks:
       - dotnet pack
     ignore_error: true
 
+  create/release:
+    dir: "{{.TEMPL_DIR}}"
+    cmds:
+      - dotnet pack --configuration Release
+    ignore_error: true
+
   install:
     dir: '{{.TEMPL_DIR}}\nupkg\'
     cmds:
@@ -58,5 +64,7 @@ tasks:
 
   deploy:
     dir: '{{.TEMPL_DIR}}\nupkg'
+    deps: [remove]
     cmds:
+      - task: create/release
       - dotnet nuget push $NUGET_FILE --api-key $NUGET_APIKEY --source https://api.nuget.org/v3/index.json

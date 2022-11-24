@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>0.3.0</PackageVersion>
+        <PackageVersion>0.3.2</PackageVersion>
         <PackageId>Asp.AwesomeTemplates.Spa</PackageId>
         <Title>ASP.NET 6 awesome SPA template</Title>
         <Authors>Ilya Klimenko (MadL1me)</Authors>

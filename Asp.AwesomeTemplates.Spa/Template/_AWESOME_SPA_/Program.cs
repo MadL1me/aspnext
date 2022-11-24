@@ -24,7 +24,7 @@ builder.Services.AddSwaggerGen(c =>
 #endif
 
 #if (UsePostgreSql)
-builder.Services.AddDbContext<Asp.AwesomeTemplateDbContext>(
+builder.Services.AddDbContext<_AWESOME_SPA_DbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  
 #endif
 
