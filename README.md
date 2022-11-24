@@ -23,11 +23,9 @@ ASP.NET 6 Awesome templates for easy development. **_Write code, not Configs._**
 
 Currently, main repository contains `Asp.AwesomeTemplates.Spa` template - template with React, ASP.NET Core, and many other things.
 
-For best user experience, it's highly recommended to use _**[create-aspnet-app](https://github.com/MadL1me/create-aspnet-app)** cli tool_.
-
 Each _Template_ is easy runs in docker, have its own _README_ which contains info about project Stack, documentation and useful commands list.
 
-If you don't want to use it, you can start with Level X template like this:
+If you don't want to use it, you can start with __main__ template like this:
 
 1. Install template:
 
