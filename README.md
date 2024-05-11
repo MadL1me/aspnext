@@ -1,13 +1,10 @@
-[![Dotnet foundation](https://img.shields.io/badge/-.NET%20Foundation-blueviolet)](https://dotnetfoundation.org/)
-![Version](https://img.shields.io/badge/version-0.3.2-orange)
+[![Dotnet foundation](https://img.shields.io/badge/-.NET%20Template-blueviolet)](https://dotnetfoundation.org/)
+![Version](https://img.shields.io/badge/version-0.3.2-blue)
 [![Nuget package](https://img.shields.io/badge/Nuget%20-Package-red)](https://www.nuget.org/packages/Asp.AwesomeTemplates.Main/)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)
 
-# ASPNET-AWESOME-TEMPLATES
+# <img width="35" alt="Asset 1@2x" src="https://github.com/MadL1me/aspnet-awesome-templates/assets/46647517/e81a904e-6b5a-4d25-8ed4-5630d495b045">   AspNext
 
 ASP.NET 6 Awesome templates for easy development. **_Write code, not Configs._**
-
-<img alt="Logo" align="right" src="https://user-images.githubusercontent.com/46647517/172821591-cf472a75-69ea-4447-b5a9-7fac844c8f42.png" width="20%">
 
 ## Phylosophy
 
