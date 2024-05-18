@@ -2,31 +2,28 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>0.3.2</PackageVersion>
+        <PackageVersion>8.0.0</PackageVersion>
         <PackageId>Aspnext.Template</PackageId>
-        <Title>ASP.NET 6 awesome SPA template</Title>
+        <Title>ASP.NET 8 awesome SPA template</Title>
         <Authors>Ilya Klimenko (MadL1me)</Authors>
-        <Description>ASP.NET 6 Easy-to-use, modern and awesome template.</Description>
-        <PackageTags>dotnet-new;templates;aspnet;ez-template;webapp;aspnet-react;aspnet-vue</PackageTags>
-        <TargetFramework>net6.0</TargetFramework>
+        <Description>ASP.NET 8 Easy-to-use, modern and awesome template.</Description>
+        <PackageTags>dotnet-new;templates;aspnet;webapp;aspnet-react;aspnet-next;aspnext;template</PackageTags>
+        <TargetFramework>net8.0</TargetFramework>
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <RootNamespace>Asp.AwesomeTemplates.Spa</RootNamespace>
+        <RootNamespace>AspnextTemplate</RootNamespace>
     </PropertyGroup>
     
-
     <ItemGroup>
       <Content Include="Template\**\*" Exclude="Template\**\bin\**;Template\**\obj\**" />
       <Compile Remove="**\*" />
     </ItemGroup>
     
-
     <ItemGroup>
       <Folder Include="nupkg\" />
     </ItemGroup>
-
 </Project>

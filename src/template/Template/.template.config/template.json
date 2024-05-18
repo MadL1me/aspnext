@@ -10,6 +10,9 @@
     "type": "solution",
     "language": "C#"
   },
+  "guids": [
+    "753473BB-FF9B-49A5-8FBA-976C4C9A1BD4"
+  ],
   "symbols": {
     "UseExamples": {
       "type": "parameter",
