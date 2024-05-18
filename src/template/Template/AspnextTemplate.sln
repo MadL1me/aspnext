@@ -4,6 +4,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate", "src\AspnextTemplate.csproj", "{753473BB-FF9B-49A5-8FBA-976C4C9A1BD4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{DF2D14C0-66F0-408F-8BA2-CBFBDDD4FC07}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		infra\postgres-docker-compose.yaml = infra\postgres-docker-compose.yaml
+		infra\app-docker-compose.yaml = infra\app-docker-compose.yaml
+		src\Dockerfile = src\Dockerfile
+		Taskfile.yaml = Taskfile.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
