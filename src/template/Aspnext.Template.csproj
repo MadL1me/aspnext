@@ -3,7 +3,7 @@
     <PropertyGroup>
         <PackageType>Template</PackageType>
         <PackageVersion>0.3.2</PackageVersion>
-        <PackageId>Asp.AwesomeTemplates.Spa</PackageId>
+        <PackageId>Aspnext.Template</PackageId>
         <Title>ASP.NET 6 awesome SPA template</Title>
         <Authors>Ilya Klimenko (MadL1me)</Authors>
         <Description>ASP.NET 6 Easy-to-use, modern and awesome template.</Description>
@@ -15,12 +15,18 @@
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
         <PackageOutputPath>./nupkg</PackageOutputPath>
+        <RootNamespace>Asp.AwesomeTemplates.Spa</RootNamespace>
     </PropertyGroup>
     
 
     <ItemGroup>
       <Content Include="Template\**\*" Exclude="Template\**\bin\**;Template\**\obj\**" />
       <Compile Remove="**\*" />
+    </ItemGroup>
+    
+
+    <ItemGroup>
+      <Folder Include="nupkg\" />
     </ItemGroup>
 
 </Project>

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace _AWESOME_SPA_.Data;
+namespace AspnextTemplate.Data;
 
-public sealed class _AWESOME_SPA_DbContext : DbContext
+public sealed class AspnextTemplateDbContext : DbContext
 {
-    public _AWESOME_SPA_DbContext(DbContextOptions options) : base(options)
+    public AspnextTemplateDbContext(DbContextOptions options) : base(options)
     {
         
     }
