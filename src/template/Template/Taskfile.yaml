@@ -20,27 +20,27 @@ tasks:
 
   init/backend:
     desc: Initialize the back-end project
-    dir: _AWESOME_SPA_
+    dir: AspnextTemplate
     cmds:
       - dotnet restore
       - docker compose build
 
   init/db:
     desc: Initialize the database
-    dir: _AWESOME_SPA_/DB
+    dir: AspnextTemplate/DB
     cmds:
       - docker compose build
 
   init/certs:
     desc: Generate self-signed certificates
     cmds:
-      - dotnet dev-certs https -ep ${HOME}/.aspnet/https/_AWESOME_SPA_.pfx -p PASSWORD
+      - dotnet dev-certs https -ep ${HOME}/.aspnet/https/AspnextTemplate.pfx -p PASSWORD
       - dotnet dev-certs https --trust
       # - openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/CN=localhost"
 
   run/backend:
     desc: Run the backend
-    dir: _AWESOME_SPA_
+    dir: AspnextTemplate
     cmds:
       //#if(UsePostgreSql)
       - task: run/db
@@ -50,7 +50,7 @@ tasks:
   //#if(UsePostgreSql)
   run/db: 
     desc: Rund the database
-    dir: _AWESOME_SPA_/DB
+    dir: AspnextTemplate/DB
     cmds:
       - docker compose up --no-recreate -d
   //#endif

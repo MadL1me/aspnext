@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 #endif
 #if (UsePostgreSql)
 using Microsoft.EntityFrameworkCore;
-using _AWESOME_SPA_.Data;
+using AspnextTemplate.Data;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,12 +19,12 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "_AWESOME_SPA_ API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspnextTemplate API", Version = "v1" });
 });
 #endif
 
 #if (UsePostgreSql)
-builder.Services.AddDbContext<_AWESOME_SPA_DbContext>(
+builder.Services.AddDbContext<AspnextTemplateDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  
 #endif
 
@@ -42,7 +42,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

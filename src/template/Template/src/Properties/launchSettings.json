@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "_AWESOME_SPA_": {
+    "AspnextTemplate": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

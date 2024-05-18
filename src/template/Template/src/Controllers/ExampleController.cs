@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace _AWESOME_SPA_.Controllers;
+namespace AspnextTemplate.Controllers;
 
 public record ExampleUserDto
 {

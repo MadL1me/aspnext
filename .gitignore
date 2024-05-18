@@ -9,3 +9,5 @@ Level X/nupkg
 .env.prod
 Asp.AwesomeTemplates.Spa/nupkg
 Asp.AwesomeTemplates.Spa/Template/react-vite/node_modules
+**/.DS_Store
+experiments

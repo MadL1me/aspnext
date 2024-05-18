@@ -1,15 +1,18 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
   "author": "Ilya  Klimenko (MadL1me)",
-  "classifications": ["Webapp", "Asp net 6"],
-  "identity": "Asp.AwesomeTemplates.Spa.CSharp",
-  "name": "ASP.NET 6 Easy-to-use, modern and awesome template",
-  "shortName": "asp-awesome-spa",
-  "sourceName": "_AWESOME_SPA_",
+  "classifications": ["WebApp", "ASP.NET 8", ".NET 8"],
+  "identity": "Aspnext.Template",
+  "name": "ASP.NET 8 Easy-to-use and modern template",
+  "shortName": "aspnext",
+  "sourceName": "AspnextTemplate",
   "tags": {
-    "type": "project",
+    "type": "solution",
     "language": "C#"
   },
+  "guids": [
+    "753473BB-FF9B-49A5-8FBA-976C4C9A1BD4"
+  ],
   "symbols": {
     "UseExamples": {
       "type": "parameter",
@@ -85,13 +88,13 @@
         },
         {
           "condition": "(!UseExamples)",
-          "exclude": ["_AWESOME_SPA_/Controllers/ExampleController.cs"]
+          "exclude": ["AspnextTemplate/Controllers/ExampleController.cs"]
         },
         {
           "condition": "(!UsePostgreSql)",
           "exclude": [
-            "_AWESOME_SPA_/Data/Asp.AwesomeTemplateDbContext.cs",
-            "_AWESOME_SPA_/DB/**"
+            "AspnextTemplate/Data/Asp.AwesomeTemplateDbContext.cs",
+            "AspnextTemplate/DB/**"
           ]
         }
       ]
