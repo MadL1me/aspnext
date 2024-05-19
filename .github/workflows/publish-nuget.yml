@@ -35,7 +35,7 @@ jobs:
     - name: Publish to GitHub Packages
       env: 
         NUGET_GH_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-      run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_GH_API_KEY --source https://nuget.pkg.github.com/${{ github.repository }}/index.json --skip-duplicate
+      run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_GH_API_KEY --source https://nuget.pkg.github.com/MadL1me/index.json --skip-duplicate
 
     - name: Determine NuGet Package Name
       id: get_nupkg_name
