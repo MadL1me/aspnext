@@ -2,8 +2,7 @@ name: Publish .NET Template
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -31,76 +30,8 @@ jobs:
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
       run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json --skip-duplicate
-
-    - name: Publish to GitHub Packages
+    
+    - name: Publish to Github Nuget Registry
       env: 
         NUGET_GH_API_KEY: ${{ secrets.GITHUB_TOKEN }}
       run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_GH_API_KEY --source https://nuget.pkg.github.com/MadL1me/index.json --skip-duplicate
-
-    - name: Determine NuGet Package Name
-      id: get_nupkg_name
-      run: echo "PACKAGE_NAME=$(basename ./nupkg/*.nupkg)" >> $GITHUB_ENV
-
-    - name: Create or Update GitHub Release
-      id: create_update_release
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const { context, github } = require('@actions/github');
-          
-          const tagName = context.ref.replace('refs/heads/', 'v');
-          const releaseName = `Release ${tagName}`;
-          const releaseBody = 'Release description from merge request.';
-
-          async function createOrUpdateRelease() {
-            try {
-              const release = await github.rest.repos.getReleaseByTag({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                tag: tagName
-              });
-
-              const updatedRelease = await github.rest.repos.updateRelease({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                release_id: release.data.id,
-                tag_name: tagName,
-                name: releaseName,
-                body: releaseBody,
-                draft: false,
-                prerelease: false
-              });
-
-              return updatedRelease.data.upload_url;
-
-            } catch (error) {
-              if (error.status === 404) {
-                const newRelease = await github.rest.repos.createRelease({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  tag_name: tagName,
-                  name: releaseName,
-                  body: releaseBody,
-                  draft: false,
-                  prerelease: false
-                });
-
-                return newRelease.data.upload_url;
-
-              } else {
-                throw error;
-              }
-            }
-          }
-
-          return createOrUpdateRelease();
-        result-encoding: string
-        result: upload_url
-
-    - name: Upload NuGet Package to GitHub Release
-      uses: actions/upload-release-asset@v1
-      with:
-        upload_url: ${{ steps.create_update_release.outputs.upload_url }}
-        asset_path: ./nupkg/*.nupkg
-        asset_name: ${{ env.PACKAGE_NAME }}
-        asset_content_type: application/octet-stream
