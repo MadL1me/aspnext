@@ -6,6 +6,8 @@ export $(shell sed 's/=.*//' $(DOTENV))
 
 .PHONY: remove create create_release install new run-dotnet run all list info deploy
 
+all: uninstall clean remove pack install new
+
 clean:
 	cd experiments && \
 	rm -rf *
@@ -32,7 +34,7 @@ pack-release:
 
 new:
 	cd $(TEMPL_DIR)/nupkg && \
-	dotnet new $$TEMPL_DOTNET_NAME -o $$TEST_PROJ_NAME
+	dotnet new $(TEMPL_DOTNET_NAME) -o $(TEST_PROJ_NAME)
 
 run-dotnet:
 	cd $(TEMPL_DIR)/nupkg/$(TEST_PROJ_NAME) && \
@@ -41,8 +43,6 @@ run-dotnet:
 run:
 	cd $(TEMPL_DIR)/nupkg/$(TEST_PROJ_NAME)/$(TEST_PROJ_NAME) && \
 	docker compose up
-
-all: remove pack install new
 
 info:
 	dotnet new $$TEMPL_DOTNET_NAME -h

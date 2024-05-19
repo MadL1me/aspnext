@@ -1,6 +1,6 @@
-using System.Text;
-#if(EnableSwaggerSupport)
-using Microsoft.OpenApi.Models;
+using AspnextTemplate.Api.Extensions;
+#if (AddZitadelAuth)
+using AspnextTemplate.Infrastructure.Zitadel;
 #endif
 #if (UsePostgreSql)
 using Microsoft.EntityFrameworkCore;
@@ -10,22 +10,19 @@ using AspnextTemplate.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
-#if(EnableSwaggerSupport)
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+// Add custom swagger extension method
+builder.Services.AddSwaggerSetup();
+#if (AddZitadelAuth)
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspnextTemplate API", Version = "v1" });
-});
+// Add custom zitadel authentication
+builder.Services.AddZitadelAuthentication(builder.Configuration);
 #endif
 
 #if (UsePostgreSql)
 builder.Services.AddDbContext<AspnextTemplateDbContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));  
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 #endif
 
 var app = builder.Build();
@@ -33,10 +30,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-#if(EnableSwaggerSupport)
     app.UseSwagger();
     app.UseSwaggerUI();
-#endif
 }
 
 app.UseHttpsRedirection();

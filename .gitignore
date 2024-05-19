@@ -7,7 +7,8 @@ MainTemplate/nupkg
 Level X/.vs
 Level X/nupkg
 .env.prod
-Asp.AwesomeTemplates.Spa/nupkg
-Asp.AwesomeTemplates.Spa/Template/react-vite/node_modules
+AspnextTemplate/nupkg
+AspnextTemplate/Template/react-vite/node_modules
 **/.DS_Store
 experiments
+src/template/nupkg
