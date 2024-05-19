@@ -13,6 +13,9 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 indent_size = 4
 
+[*.json]
+indent_size = 2
+
 # Microsoft .NET properties
 csharp_remove_blank_lines_near_braces_in_declarations = true
 csharp_blank_lines_around_type = 1

@@ -14,41 +14,15 @@
     "94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4"
   ],
   "symbols": {
-    "UseExamples": {
+    "AddExamples": {
       "type": "parameter",
       "descriptions": "Adds examples and code-samples for both frontend and backend",
       "datatype": "bool",
       "defaultValue": "true"
     },
-    "EnableSwaggerSupport": {
+    "AddDatabase": {
       "type": "parameter",
-      "descriptions": "Enables swagger support",
-      "datatype": "bool",
-      "defaultValue": "true"
-    },
-    "UseSpaFrontendFramework": {
-      "type": "parameter",
-      "descriptions": "Adds selected SPA framework (React)",
-      "datatype": "choice",
-      "defaultValue": "Next",
-      "choices": [
-        {
-          "choice": "ReactVite",
-          "description": "Use React.Ts created with vite"
-        },
-        {
-          "choice": "Next",
-          "description": "Use Next.js with Typescript and eslint support"
-        },
-        {
-          "choice": "None",
-          "description": "Do not use any spa framework"
-        }
-      ]
-    },
-    "UseEfDatabase": {
-      "type": "parameter",
-      "description": "Adds Database with Entity Framework and Docker-compose",
+      "description": "Adds Database with Entity Framework and docker compose",
       "datatype": "choice",
       "defaultValue": "pgsql",
       "choices": [
@@ -62,43 +36,36 @@
         }
       ]
     },
+    "AddZitadelAuth": {
+      "type": "parameter",
+      "description": "Adds 'Zitadel' identity provider setup with docker compose",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
     "UsePostgreSql": {
       "type": "computed",
-      "value": "(UseEfDatabase == \"pgsql\")"
-    },
-    "UseReactVite": {
-      "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"ReactVite\")"
-    },
-    "UseNext": {
-      "type": "computed",
-      "value": "(UseSpaFrontendFramework == \"Next\")"
-    },
-    "UseAnySpa": {
-      "type": "computed",
-      "value": "(UseSpaFrontendFramework != \"None\")"
+      "value": "(AddDatabase == \"pgsql\")"
     }
   },
   "sources": [
     {
       "modifiers": [
         {
-          "condition": "(!UseReactVite)",
-          "exclude": ["react-vite/**"]
-        },
-        {
-          "condition": "(!UseNext)",
-          "exclude": ["react-next/**"]
-        },
-        {
-          "condition": "(!UseExamples)",
+          "condition": "(!AddExamples)",
           "exclude": ["AspnextTemplate/Controllers/ExampleController.cs"]
         },
         {
           "condition": "(!UsePostgreSql)",
           "exclude": [
-            "AspnextTemplate/Data/Asp.AwesomeTemplateDbContext.cs",
-            "AspnextTemplate/DB/**"
+            "AspnextTemplate/Data/AspnextTemplateDbContext.cs",
+            "infra/docker-compose-postgres.yaml"
+          ]
+        },
+        {
+          "condition": "(!AddZitadelAuth)",
+          "exclude": [
+            "infra/docker-compose-zitadel.yaml",
+            "src/Infrastructure/AspnextTemplate.Infrastructure.Zitadel/**"
           ]
         }
       ]

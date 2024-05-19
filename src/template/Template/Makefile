@@ -1,26 +1,13 @@
 # Makefile
-//#if (UseReactVite)
-FRONTEND_DIR = react-vite
-//#endif
-//#if (UseNext)
-FRONTEND_DIR = react-next
-//#endif
 //#if (UsePostgreSql)
 DB_TASK = run_db
 //#endif
-
 HOME := $(shell echo $$HOME)
 PASSWORD := YOUR_PASSWORD # Replace with actual password
 
-.PHONY: init init_frontend init_backend init_db init_certs run_backend $(DB_TASK) run_frontend run
+.PHONY: init init_frontend init_backend init_db init_certs run_backend $(DB_TASK) run_frontend run_auth run
 
 init: init_frontend init_backend init_certs init_db
-
-//#if (UseAnySpa)
-init_frontend:
-	@echo "Initialize the front-end project"
-	cd $(FRONTEND_DIR) && yarn install
-//#endif
 
 init_backend:
 	@echo "Initialize the back-end project"
@@ -29,7 +16,7 @@ init_backend:
 //#if (UsePostgreSql)
 init_db:
 	@echo "Initialize the database"
-	cd infra/postgres-docker-compose.yaml && docker compose up -d
+	cd infra && docker compose --file docker-compose-postgres.yaml up -d
 //#endif
 
 init_certs:
@@ -45,19 +32,14 @@ run_backend: $(DB_TASK)
 //#if (UsePostgreSql)
 run_db:
 	@echo "Run the database"
-	cd AspnextTemplate/DB && docker compose up --no-recreate -d
+	cd infra && docker compose --file docker-compose-postgres.yaml up -d
 //#endif
 
-//#if (UseAnySpa)
-run_frontend:
-	@echo "Run the frontend"
-	cd $(FRONTEND_DIR) && yarn dev
+//#if (AddZitadelAuth)
+run_auth:
+	@echo "Run Zitadel identity provider"
+	cd infra && docker compose --file docker-compose-zitadel.yaml up -d
 //#endif
 
-//#if (UseAnySpa)
-run: run_backend run_frontend
-	@echo "Run the project"
-//#else
 run: run_backend
 	@echo "Run the project"
-//#endif

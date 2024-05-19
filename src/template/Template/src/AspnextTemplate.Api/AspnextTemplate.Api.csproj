@@ -7,11 +7,9 @@
       <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
-<!--#if (EnableSwaggerSupport)-->
     <ItemGroup>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
     </ItemGroup>
-<!--#endif -->
 <!--#if (UsePostgreSql)-->
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
@@ -20,6 +18,9 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Infrastructure\AspnextTemplate.Infrastructure.Zitadel\AspnextTemplate.Infrastructure.Zitadel.csproj" />
     </ItemGroup>
 <!--#endif -->
 </Project>

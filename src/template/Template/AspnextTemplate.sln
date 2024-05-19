@@ -5,11 +5,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{DF2D14C0-66F0-408F-8BA2-CBFBDDD4FC07}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		infra\postgres-docker-compose.yaml = infra\postgres-docker-compose.yaml
-		infra\app-docker-compose.yaml = infra\app-docker-compose.yaml
 		Makefile = Makefile
 		src\AspnextTemplate.Api\Dockerfile = src\AspnextTemplate.Api\Dockerfile
 		.editorconfig = .editorconfig
+		infra\docker-compose-postgres.yaml = infra\docker-compose-postgres.yaml
+		infra\docker-compose-app.yaml = infra\docker-compose-app.yaml
+		infra\docker-compose-zitadel.yaml = infra\docker-compose-zitadel.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate", "src\AspnextTemplate.Api\AspnextTemplate.Api.csproj", "{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}"
@@ -19,6 +20,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{CB4A4877-AA40-425D-A401-01441508E756}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FBCC38CB-1EEE-40FD-AA02-FB26B23E7FE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3E0E9C11-D112-41DF-8029-57F996829E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate.Infrastructure.Zitadel", "src\Infrastructure\AspnextTemplate.Infrastructure.Zitadel\AspnextTemplate.Infrastructure.Zitadel.csproj", "{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +38,14 @@ Global
 		{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4} = {D3BD39A8-2835-4B2A-8E74-A3E59B387D36}
+		{3E0E9C11-D112-41DF-8029-57F996829E87} = {D3BD39A8-2835-4B2A-8E74-A3E59B387D36}
+		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3} = {3E0E9C11-D112-41DF-8029-57F996829E87}
 	EndGlobalSection
 EndGlobal
