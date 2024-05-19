@@ -11,7 +11,7 @@
     "language": "C#"
   },
   "guids": [
-    "753473BB-FF9B-49A5-8FBA-976C4C9A1BD4"
+    "94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4"
   ],
   "symbols": {
     "UseExamples": {
@@ -54,7 +54,7 @@
       "choices": [
         {
           "choice": "pgsql",
-          "description": "Use PostgreSQL database inside docker compose with pgAdmin"
+          "description": "Use PostgreSQL database inside docker compose with PgAdmin"
         },
         {
           "choice": "none",
@@ -73,6 +73,10 @@
     "UseNext": {
       "type": "computed",
       "value": "(UseSpaFrontendFramework == \"Next\")"
+    },
+    "UseAnySpa": {
+      "type": "computed",
+      "value": "(UseSpaFrontendFramework != \"None\")"
     }
   },
   "sources": [

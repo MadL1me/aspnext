@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspnextTemplate.Controllers;
+namespace MyProject.Controllers;
 
 public record ExampleUserDto
 {
@@ -26,15 +26,16 @@ public class ExampleController : ControllerBase
     /// Example of synchronous Http.Get request pipeline with users/{userId} route 
     /// </summary>
     [HttpGet("users/{userId}")]
-    public IEnumerable<ExampleUserDto> GetUser(int userId)
+    public ActionResult<IEnumerable<ExampleUserDto>> GetUser(int userId)
     {
-        return Enumerable.Range(1, 5).Select(index => new ExampleUserDto
+        // default OK function
+        return Ok(Enumerable.Range(1, 5).Select(index => new ExampleUserDto
             {
                 Age = Random.Shared.Next(0, 55),
                 DateOfBirth = DateTime.Now.AddDays(index),
                 Name = Names[Random.Shared.Next(Names.Length)]
             })
-            .ToArray();
+            .ToArray());
     }
     
     /// <summary>
