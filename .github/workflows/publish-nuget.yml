@@ -34,4 +34,4 @@ jobs:
     - name: Publish to Github Nuget Registry
       env: 
         NUGET_GH_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-      run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_GH_API_KEY --source https://nuget.pkg.github.com/Aspnext/index.json --skip-duplicate
+      run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_GH_API_KEY --source https://nuget.pkg.github.com/MadL1me/index.json --skip-duplicate
