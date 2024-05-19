@@ -1,0 +1,32 @@
+name: Publish .NET Template
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore src/template/Aspnext.Template/Aspnext.Template.csproj
+
+    - name: Build the project
+      run: dotnet build src/template/Aspnext.Template/Aspnext.Template.csproj --no-restore --configuration Release
+
+    - name: Pack the project
+      run: dotnet pack src/template/Aspnext.Template/Aspnext.Template.csproj --no-build --configuration Release --output ./nupkg
+
+    - name: Publish to NuGet
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
