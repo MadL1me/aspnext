@@ -19,13 +19,13 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore src/template/Aspnext.Template/Aspnext.Template.csproj
+      run: dotnet restore src/template/Aspnext.Template.csproj
 
     - name: Build the project
-      run: dotnet build src/template/Aspnext.Template/Aspnext.Template.csproj --no-restore --configuration Release
+      run: dotnet build src/template/Aspnext.Template.csproj --no-restore --configuration Release
 
     - name: Pack the project
-      run: dotnet pack src/template/Aspnext.Template/Aspnext.Template.csproj --no-build --configuration Release --output ./nupkg
+      run: dotnet pack src/template/Aspnext.Template.csproj --no-build --configuration Release --output ./nupkg
 
     - name: Publish to NuGet
       env:
