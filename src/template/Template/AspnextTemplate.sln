@@ -9,9 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{DF2D
 		infra\app-docker-compose.yaml = infra\app-docker-compose.yaml
 		Makefile = Makefile
 		src\AspnextTemplate.Api\Dockerfile = src\AspnextTemplate.Api\Dockerfile
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate", "src\AspnextTemplate.Api\AspnextTemplate.csproj", "{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate", "src\AspnextTemplate.Api\AspnextTemplate.Api.csproj", "{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3BD39A8-2835-4B2A-8E74-A3E59B387D36}"
 EndProject
