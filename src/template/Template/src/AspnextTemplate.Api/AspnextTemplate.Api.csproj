@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-    
+
     <PropertyGroup>
       <TargetFramework>net8.0</TargetFramework>
       <Nullable>enable</Nullable>
@@ -19,8 +19,13 @@
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
     </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\Infrastructure\AspnextTemplate.Infrastructure.Zitadel\AspnextTemplate.Infrastructure.Zitadel.csproj" />
-    </ItemGroup>
 <!--#endif -->
+    <ItemGroup>
+<!--#if (AddZitadelAuth)-->
+        <ProjectReference Include="..\Infrastructure\AspnextTemplate.Infrastructure.Zitadel\AspnextTemplate.Infrastructure.Zitadel.csproj" />
+<!--#endif -->
+<!--#if (AddObservability)-->
+        <ProjectReference Include="..\Infrastructure\AspnextTemplate.Infrastructure.Observability\AspnextTemplate.Infrastructure.Observability.csproj" />
+<!--#endif -->
+    </ItemGroup>
 </Project>

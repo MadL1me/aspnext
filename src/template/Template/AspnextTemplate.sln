@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{DF2D
 		infra\docker-compose-postgres.yaml = infra\docker-compose-postgres.yaml
 		infra\docker-compose-app.yaml = infra\docker-compose-app.yaml
 		infra\docker-compose-zitadel.yaml = infra\docker-compose-zitadel.yaml
+		infra\docker-compose-prometheus.yaml = infra\docker-compose-prometheus.yaml
+		infra\docker-compose-jaeger.yaml = infra\docker-compose-jaeger.yaml
+		infra\prometheus.yml = infra\prometheus.yml
+		infra\docker-compose-grafana.yaml = infra\docker-compose-grafana.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate", "src\AspnextTemplate.Api\AspnextTemplate.Api.csproj", "{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4}"
@@ -24,6 +28,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3E0E9C11-D112-41DF-8029-57F996829E87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate.Infrastructure.Zitadel", "src\Infrastructure\AspnextTemplate.Infrastructure.Zitadel\AspnextTemplate.Infrastructure.Zitadel.csproj", "{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate.Domain", "src\AspnextTemplate.Domain\AspnextTemplate.Domain.csproj", "{61833C02-5273-4A5D-A7CC-1DD695D35475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnextTemplate.Infrastructure.Observability", "src\Infrastructure\AspnextTemplate.Infrastructure.Observability\AspnextTemplate.Infrastructure.Observability.csproj", "{2480637A-E46B-4338-995C-18574CD4118A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +50,20 @@ Global
 		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61833C02-5273-4A5D-A7CC-1DD695D35475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61833C02-5273-4A5D-A7CC-1DD695D35475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61833C02-5273-4A5D-A7CC-1DD695D35475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61833C02-5273-4A5D-A7CC-1DD695D35475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2480637A-E46B-4338-995C-18574CD4118A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2480637A-E46B-4338-995C-18574CD4118A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2480637A-E46B-4338-995C-18574CD4118A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2480637A-E46B-4338-995C-18574CD4118A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{94618EED-2AEA-44A5-AC03-9A3B9AC0DBC4} = {D3BD39A8-2835-4B2A-8E74-A3E59B387D36}
 		{3E0E9C11-D112-41DF-8029-57F996829E87} = {D3BD39A8-2835-4B2A-8E74-A3E59B387D36}
 		{A142CFBD-9B0E-4B10-8A16-7404886A3DC3} = {3E0E9C11-D112-41DF-8029-57F996829E87}
+		{61833C02-5273-4A5D-A7CC-1DD695D35475} = {D3BD39A8-2835-4B2A-8E74-A3E59B387D36}
+		{2480637A-E46B-4338-995C-18574CD4118A} = {3E0E9C11-D112-41DF-8029-57F996829E87}
 	EndGlobalSection
 EndGlobal
