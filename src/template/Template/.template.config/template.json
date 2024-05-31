@@ -42,6 +42,12 @@
       "datatype": "bool",
       "defaultValue": "true"
     },
+    "AddObservability": {
+      "type": "parameter",
+      "description": "Adds OpenTelemetry tracing and metrics support with docker compose",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
     "UsePostgreSql": {
       "type": "computed",
       "value": "(AddDatabase == \"pgsql\")"
@@ -66,6 +72,17 @@
           "exclude": [
             "infra/docker-compose-zitadel.yaml",
             "src/Infrastructure/AspnextTemplate.Infrastructure.Zitadel/**"
+          ]
+        },
+        {
+          "condition": "(!AddObservability)",
+          "exclude": [
+            "infra/docker-compose-grafana.yaml",
+            "infra/docker-compose-jaeger.yaml",
+            "infra/docker-compose-prometheus.yaml",
+            "infra/prometheus.yaml",
+            "src/Infrastructure/AspnextTemplate.Infrastructure.Observability",
+            "src/AspnextTemplate.Domain/Observability/**"
           ]
         }
       ]
