@@ -48,9 +48,19 @@
       "datatype": "bool",
       "defaultValue": "true"
     },
+    "AddKafka": {
+      "type": "parameter",
+      "description": "Adds Kafka support with docker compose",
+      "datatype": "bool",
+      "defaultValue": "false"
+    },
     "UsePostgreSql": {
       "type": "computed",
       "value": "(AddDatabase == \"pgsql\")"
+    },
+    "UseInfraProject": {
+      "type": "computed",
+      "value": "(UsePostgreSql || AddKafka)"
     }
   },
   "sources": [
@@ -83,6 +93,32 @@
             "infra/prometheus.yaml",
             "src/Infrastructure/AspnextTemplate.Infrastructure.Observability",
             "src/AspnextTemplate.Domain/Observability/**"
+          ]
+        },
+        {
+          "condition": "(!UseInfraProject)",
+          "exclude": [
+            "src/Infrastructure/AspnextTemplate.Infrastructure.Data"
+          ]
+        },
+        {
+          "condition": "(UseInfraProject && !UsePostgreSql)",
+          "exclude": [
+            "src/Infrastructure/AspnextTemplate.Infrastructure.Data/Repositories"
+          ]
+        },
+        {
+          "condition": "(UseInfraProject && !AddKafka)",
+          "exclude": [
+            "src/Infrastructure/AspnextTemplate.Infrastructure.Data/Kafka/**",
+            "src/Infrastructure/AspnextTemplate.Infrastructure.Data/Kafka"
+          ]
+        },
+        {
+          "condition": "(!AddKafka)",
+          "exclude": [
+            "src/AspnextTemplate.Domain/Notification/**",
+            "src/AspnextTemplate.Domain/Notification"
           ]
         }
       ]

@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>8.2.0</PackageVersion>
+        <PackageVersion>8.3.0</PackageVersion>
         <PackageId>Aspnext.Template</PackageId>
         <Title>ASP.NET 8 awesome SPA template</Title>
         <Authors>Ilya Klimenko (MadL1me)</Authors>

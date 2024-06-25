@@ -1,6 +1,7 @@
 # Define environment variables
 TEMPL_DIR := src/template
 DOTENV := .env.prod
+TEST_PROJ_OUT := "experiments/Rule"
 include $(DOTENV)
 export $(shell sed 's/=.*//' $(DOTENV))
 
@@ -33,16 +34,12 @@ pack-release:
 	dotnet pack --configuration Release
 
 new:
-	cd $(TEMPL_DIR)/nupkg && \
-	dotnet new $(TEMPL_DOTNET_NAME) -o $(TEST_PROJ_NAME)
+	rm -rf $(TEST_PROJ_OUT)
+	dotnet new $(TEMPL_DOTNET_NAME) -o $(TEST_PROJ_OUT)
 
 run-dotnet:
-	cd $(TEMPL_DIR)/nupkg/$(TEST_PROJ_NAME) && \
+	cd $(TEST_PROJ_OUT) && \
 	dotnet run
-
-run:
-	cd $(TEMPL_DIR)/nupkg/$(TEST_PROJ_NAME)/$(TEST_PROJ_NAME) && \
-	docker compose up
 
 info:
 	dotnet new $$TEMPL_DOTNET_NAME -h

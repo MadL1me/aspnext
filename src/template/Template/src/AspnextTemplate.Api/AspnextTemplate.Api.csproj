@@ -22,6 +22,7 @@
 <!--#endif -->
     <ItemGroup>
 <!--#if (AddZitadelAuth)-->
+        <ProjectReference Include="..\Infrastructure\AspnextTemplate.Infrastructure.Data\AspnextTemplate.Infrastructure.Data.csproj" />
         <ProjectReference Include="..\Infrastructure\AspnextTemplate.Infrastructure.Zitadel\AspnextTemplate.Infrastructure.Zitadel.csproj" />
 <!--#endif -->
 <!--#if (AddObservability)-->
