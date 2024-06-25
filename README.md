@@ -1,5 +1,5 @@
 [![Dotnet foundation](https://img.shields.io/badge/-.NET%20Template-blueviolet)](https://dotnetfoundation.org/)
-![Version](https://img.shields.io/badge/version-8.2.0-blue)
+![Version](https://img.shields.io/badge/version-8.3.0-blue)
 [![Nuget package](https://img.shields.io/badge/Nuget%20-Package-red)](https://www.nuget.org/packages/Aspnext.Template/8.2.0)
 
 # <img width="35" alt="Asset 1@2x" src="https://github.com/MadL1me/aspnet-awesome-templates/assets/46647517/e81a904e-6b5a-4d25-8ed4-5630d495b045">   AspNext
@@ -17,7 +17,7 @@ If you don't want to use it, you can start with __main__ template like this:
 1. Install template:
 
 ```sh
-dotnet new install Aspnext.Template::8.2.0
+dotnet new install Aspnext.Template::8.3.0
 ```
 
 2. Create template with dotnet new:

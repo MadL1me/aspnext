@@ -5,7 +5,7 @@ using AspnextTemplate.Infrastructure.Zitadel;
 #endif
 #if (UsePostgreSql)
 using Microsoft.EntityFrameworkCore;
-using AspnextTemplate.Data;
+using AspnextTemplate.Infrastructure.Data.Repositories;
 #endif
 
 var builder = WebApplication.CreateBuilder(args);
